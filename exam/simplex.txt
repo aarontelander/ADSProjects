@@ -1,0 +1,32 @@
+Pseudo code for the Simplex Algorithm.
+
+Aaron Telander
+ADS Take Home Exam
+Problem #3
+May 10, 2018
+
+WLOG we will say that we are trying to MAXIMIZE a solution.
+[If looking to MINIMIZE, change "max" to "min"
+and ">" to "<"]
+
+Let n be the number of variables/the number of dimensions.
+Let M be an 1xn matrix, representing the function we would like to max.
+Let V be a vector of vectors, representing the vertices of our graph.
+[The size of each sub-vector will be n]
+
+max = 0
+[This will always be our initialization, since the origin is the first point we test.]
+
+For v in V:
+	test = 0
+	index = 0
+
+	For m in M:
+		test += m*v[index]
+		index++
+
+	If test > max:
+		max = test
+	Else:
+		return v
+
